@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Deep Navy Theme */
+  --background: #0B0E14; /* Very dark navy, almost black */
+  --foreground: #F8FAFC;
+  
+  --primary: #2563EB; /* Royal Blue */
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #1E293B; /* Slate 800 */
+  --secondary-foreground: #F8FAFC;
+
+  --accent: #38bdf8; /* Sky Blue/Cyan for gradients */
+  --accent-foreground: #0f172a;
+
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+
+  --card: #111520; /* Slightly lighter than bg */
+  --card-foreground: #F8FAFC;
+  
+  --border: #1e293b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.7s ease-out;
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slide-up {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Custom Gradients */
+.text-gradient-blue {
+  background: linear-gradient(to right, #3b82f6, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-hero-glow {
+  background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15), transparent 70%);
 }
