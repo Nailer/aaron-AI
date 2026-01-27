@@ -7,6 +7,11 @@ interface GoalData {
   annualIncome: number;
   timeframe: string;
   riskAppetite: 'CONSERVATIVE' | 'MODERATE' | 'AGGRESSIVE';
+  incomePredictability: string;
+  savingsTarget: string;
+  aiInterventionPreference: string;
+  adviceFormatPreference: string;
+  additionalInfo: string;
 }
 
 interface OnboardingContextType {
@@ -19,6 +24,11 @@ const defaultData: GoalData = {
   annualIncome: 125000,
   timeframe: "2 Years (Target 2028)",
   riskAppetite: "MODERATE",
+  incomePredictability: "",
+  savingsTarget: "",
+  aiInterventionPreference: "",
+  adviceFormatPreference: "",
+  additionalInfo: "",
 };
 
 const OnboardingContext = createContext<OnboardingContextType | undefined>(undefined);
