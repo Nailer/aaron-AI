@@ -1,0 +1,200 @@
+2026-02-02 00:49:07,139 [24911-MainProcess:140704524992768] 30432 OPIK DEBUG [thread_pool.py:11]: Creating file upload thread pool with pool_size: 16, requested workers count: 16 
+2026-02-02 00:49:07,140 [24911-MainProcess:140704524992768] 30433 OPIK DEBUG [patchers.py:36]: Patched LlmResponse.create
+2026-02-02 00:49:07,140 [24911-MainProcess:140704524992768] 30433 OPIK DEBUG [patchers.py:48]: Patched LiteLLMClient.acompletion
+2026-02-02 00:49:07,140 [24911-MainProcess:140704524992768] 30433 OPIK DEBUG [patchers.py:60]: Patched _model_response_to_generate_content_response
+2026-02-02 00:49:07,140 [24911-MainProcess:140704524992768] 30433 OPIK DEBUG [patchers.py:76]: Patched ADK tracers
+2026-02-02 00:49:07,146 [24911-MainProcess:140704524992768] 30439 OPIK DEBUG [streamer.py:131]: Streamer flushed completely: True
+2026-02-02 20:26:35,265 [35649-MainProcess:140704524992768] 8661 OPIK DEBUG [thread_pool.py:11]: Creating file upload thread pool with pool_size: 16, requested workers count: 16 
+2026-02-02 20:26:35,266 [35649-MainProcess:140704524992768] 8663 OPIK DEBUG [patchers.py:36]: Patched LlmResponse.create
+2026-02-02 20:26:35,266 [35649-MainProcess:140704524992768] 8663 OPIK DEBUG [patchers.py:48]: Patched LiteLLMClient.acompletion
+2026-02-02 20:26:35,266 [35649-MainProcess:140704524992768] 8663 OPIK DEBUG [patchers.py:60]: Patched _model_response_to_generate_content_response
+2026-02-02 20:26:35,266 [35649-MainProcess:140704524992768] 8663 OPIK DEBUG [patchers.py:76]: Patched ADK tracers
+2026-02-02 20:26:35,266 [35649-MainProcess:140704524992768] 8663 OPIK DEBUG [streamer.py:131]: Streamer flushed completely: True
+2026-02-02 20:28:16,404 [35776-MainProcess:140704524992768] 8581 OPIK DEBUG [thread_pool.py:11]: Creating file upload thread pool with pool_size: 16, requested workers count: 16 
+2026-02-02 20:28:16,406 [35776-MainProcess:140704524992768] 8582 OPIK DEBUG [patchers.py:36]: Patched LlmResponse.create
+2026-02-02 20:28:16,406 [35776-MainProcess:140704524992768] 8582 OPIK DEBUG [patchers.py:48]: Patched LiteLLMClient.acompletion
+2026-02-02 20:28:16,406 [35776-MainProcess:140704524992768] 8582 OPIK DEBUG [patchers.py:60]: Patched _model_response_to_generate_content_response
+2026-02-02 20:28:16,406 [35776-MainProcess:140704524992768] 8582 OPIK DEBUG [patchers.py:76]: Patched ADK tracers
+2026-02-02 20:28:16,407 [35776-MainProcess:140704524992768] 8583 OPIK DEBUG [streamer.py:131]: Streamer flushed completely: True
+2026-02-02 20:34:36,197 [36070-MainProcess:140704524992768] 8131 OPIK DEBUG [thread_pool.py:11]: Creating file upload thread pool with pool_size: 16, requested workers count: 16 
+2026-02-02 20:34:36,200 [36070-MainProcess:140704524992768] 8133 OPIK DEBUG [patchers.py:36]: Patched LlmResponse.create
+2026-02-02 20:34:36,200 [36070-MainProcess:140704524992768] 8133 OPIK DEBUG [patchers.py:48]: Patched LiteLLMClient.acompletion
+2026-02-02 20:34:36,200 [36070-MainProcess:140704524992768] 8134 OPIK DEBUG [patchers.py:60]: Patched _model_response_to_generate_content_response
+2026-02-02 20:34:36,200 [36070-MainProcess:140704524992768] 8134 OPIK DEBUG [patchers.py:76]: Patched ADK tracers
+2026-02-02 20:34:41,760 [36070-MainProcess:123145410527232] 13693 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 20:34:41,771 [36070-MainProcess:140704524992768] 13705 OPIK INFO [opik_client.py:204]: Started logging traces to the "Aaron" project at https://www.comet.com/opik/api/v1/session/redirect/projects/?trace_id=019c1fd9-89ab-7758-a6f3-00868d934743&path=aHR0cHM6Ly93d3cuY29tZXQuY29tL29waWsvYXBp.
+2026-02-02 20:34:41,772 [36070-MainProcess:123145393737728] 13705 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateTraceMessage.
+2026-02-02 20:34:41,840 [36070-MainProcess:123145410527232] 13773 OPIK DEBUG [online_message_processor.py:257]: Create spans batch request of size 1
+2026-02-02 20:34:41,840 [36070-MainProcess:123145393737728] 13774 OPIK DEBUG [online_message_processor.py:264]: Create trace batch request of size 1
+2026-02-02 20:34:43,044 [36070-MainProcess:123145393737728] 14978 OPIK DEBUG [online_message_processor.py:266]: Sent trace batch of size 1
+2026-02-02 20:34:43,044 [36070-MainProcess:123145410527232] 14978 OPIK DEBUG [online_message_processor.py:259]: Sent spans batch of size 1
+2026-02-02 20:34:43,051 [36070-MainProcess:140704524992768] 14985 OPIK DEBUG [streamer.py:131]: Streamer flushed completely: True
+2026-02-02 20:44:10,727 [37131-MainProcess:140704524992768] 8490 OPIK DEBUG [thread_pool.py:11]: Creating file upload thread pool with pool_size: 16, requested workers count: 16 
+2026-02-02 20:44:10,730 [37131-MainProcess:140704524992768] 8492 OPIK DEBUG [patchers.py:36]: Patched LlmResponse.create
+2026-02-02 20:44:10,730 [37131-MainProcess:140704524992768] 8492 OPIK DEBUG [patchers.py:48]: Patched LiteLLMClient.acompletion
+2026-02-02 20:44:10,730 [37131-MainProcess:140704524992768] 8492 OPIK DEBUG [patchers.py:60]: Patched _model_response_to_generate_content_response
+2026-02-02 20:44:10,730 [37131-MainProcess:140704524992768] 8492 OPIK DEBUG [patchers.py:76]: Patched ADK tracers
+2026-02-02 20:44:14,259 [37131-MainProcess:123145402441728] 12022 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 20:44:14,270 [37131-MainProcess:140704524992768] 12033 OPIK INFO [opik_client.py:204]: Started logging traces to the "Aaron" project at https://www.comet.com/opik/api/v1/session/redirect/projects/?trace_id=019c1fe2-4ded-7062-937f-983f31aa3c66&path=aHR0cHM6Ly93d3cuY29tZXQuY29tL29waWsvYXBp.
+2026-02-02 20:44:14,271 [37131-MainProcess:123145352073216] 12033 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateTraceMessage.
+2026-02-02 20:44:14,297 [37131-MainProcess:123145385652224] 12060 OPIK DEBUG [online_message_processor.py:257]: Create spans batch request of size 1
+2026-02-02 20:44:14,298 [37131-MainProcess:123145368862720] 12060 OPIK DEBUG [online_message_processor.py:264]: Create trace batch request of size 1
+2026-02-02 20:44:15,211 [37131-MainProcess:123145385652224] 12974 OPIK DEBUG [online_message_processor.py:259]: Sent spans batch of size 1
+2026-02-02 20:44:15,221 [37131-MainProcess:123145368862720] 12984 OPIK DEBUG [online_message_processor.py:266]: Sent trace batch of size 1
+2026-02-02 20:44:15,226 [37131-MainProcess:140704524992768] 12988 OPIK DEBUG [streamer.py:131]: Streamer flushed completely: True
+2026-02-02 21:47:33,839 [38351-MainProcess:140704524992768] 8215 OPIK DEBUG [thread_pool.py:11]: Creating file upload thread pool with pool_size: 16, requested workers count: 16 
+2026-02-02 21:47:33,841 [38351-MainProcess:140704524992768] 8218 OPIK DEBUG [patchers.py:36]: Patched LlmResponse.create
+2026-02-02 21:47:33,841 [38351-MainProcess:140704524992768] 8218 OPIK DEBUG [patchers.py:48]: Patched LiteLLMClient.acompletion
+2026-02-02 21:47:33,841 [38351-MainProcess:140704524992768] 8218 OPIK DEBUG [patchers.py:60]: Patched _model_response_to_generate_content_response
+2026-02-02 21:47:33,841 [38351-MainProcess:140704524992768] 8218 OPIK DEBUG [patchers.py:76]: Patched ADK tracers
+2026-02-02 21:47:34,646 [38351-MainProcess:140704524992768] 9022 OPIK INFO [opik_client.py:204]: Started logging traces to the "Aaron" project at https://www.comet.com/opik/api/v1/session/redirect/projects/?trace_id=019c201c-55d4-7b21-bd40-3cf73026fdd1&path=aHR0cHM6Ly93d3cuY29tZXQuY29tL29waWsvYXBp.
+2026-02-02 21:47:34,690 [38351-MainProcess:123145589968896] 9067 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:47:34,691 [38351-MainProcess:123145573179392] 9067 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateTraceMessage.
+2026-02-02 21:47:34,693 [38351-MainProcess:140704524992768] 9070 OPIK DEBUG [streamer.py:131]: Streamer flushed completely: True
+2026-02-02 21:48:33,635 [38517-MainProcess:140704524992768] 8886 OPIK DEBUG [thread_pool.py:11]: Creating file upload thread pool with pool_size: 16, requested workers count: 16 
+2026-02-02 21:48:33,637 [38517-MainProcess:140704524992768] 8888 OPIK DEBUG [patchers.py:36]: Patched LlmResponse.create
+2026-02-02 21:48:33,637 [38517-MainProcess:140704524992768] 8888 OPIK DEBUG [patchers.py:48]: Patched LiteLLMClient.acompletion
+2026-02-02 21:48:33,637 [38517-MainProcess:140704524992768] 8888 OPIK DEBUG [patchers.py:60]: Patched _model_response_to_generate_content_response
+2026-02-02 21:48:33,637 [38517-MainProcess:140704524992768] 8888 OPIK DEBUG [patchers.py:76]: Patched ADK tracers
+2026-02-02 21:48:35,340 [38517-MainProcess:123145420107776] 10590 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:48:35,348 [38517-MainProcess:140704524992768] 10599 OPIK INFO [opik_client.py:204]: Started logging traces to the "Aaron" project at https://www.comet.com/opik/api/v1/session/redirect/projects/?trace_id=019c201d-3f68-7307-9401-f941af5eba9e&path=aHR0cHM6Ly93d3cuY29tZXQuY29tL29waWsvYXBp.
+2026-02-02 21:48:35,349 [38517-MainProcess:123145369739264] 10600 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateTraceMessage.
+2026-02-02 21:48:35,371 [38517-MainProcess:123145386528768] 10621 OPIK DEBUG [online_message_processor.py:257]: Create spans batch request of size 1
+2026-02-02 21:48:35,374 [38517-MainProcess:123145403318272] 10625 OPIK DEBUG [online_message_processor.py:264]: Create trace batch request of size 1
+2026-02-02 21:48:36,704 [38517-MainProcess:123145386528768] 11955 OPIK DEBUG [online_message_processor.py:259]: Sent spans batch of size 1
+2026-02-02 21:48:36,797 [38517-MainProcess:123145403318272] 12048 OPIK DEBUG [online_message_processor.py:266]: Sent trace batch of size 1
+2026-02-02 21:48:36,799 [38517-MainProcess:140704524992768] 12049 OPIK DEBUG [streamer.py:131]: Streamer flushed completely: True
+2026-02-02 21:49:38,118 [38616-MainProcess:140704524992768] 8696 OPIK DEBUG [thread_pool.py:11]: Creating file upload thread pool with pool_size: 16, requested workers count: 16 
+2026-02-02 21:49:38,120 [38616-MainProcess:140704524992768] 8698 OPIK DEBUG [patchers.py:36]: Patched LlmResponse.create
+2026-02-02 21:49:38,120 [38616-MainProcess:140704524992768] 8699 OPIK DEBUG [patchers.py:48]: Patched LiteLLMClient.acompletion
+2026-02-02 21:49:38,120 [38616-MainProcess:140704524992768] 8699 OPIK DEBUG [patchers.py:60]: Patched _model_response_to_generate_content_response
+2026-02-02 21:49:38,120 [38616-MainProcess:140704524992768] 8699 OPIK DEBUG [patchers.py:76]: Patched ADK tracers
+2026-02-02 21:49:38,882 [38616-MainProcess:140704524992768] 9460 OPIK INFO [opik_client.py:204]: Started logging traces to the "Aaron" project at https://www.comet.com/opik/api/v1/session/redirect/projects/?trace_id=019c201e-3b4c-7bd1-9acd-3be46d5d87da&path=aHR0cHM6Ly93d3cuY29tZXQuY29tL29waWsvYXBp.
+2026-02-02 21:49:38,957 [38616-MainProcess:123145427795968] 9536 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:49:38,958 [38616-MainProcess:123145461374976] 9536 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateTraceMessage.
+2026-02-02 21:49:38,964 [38616-MainProcess:140704524992768] 9542 OPIK DEBUG [streamer.py:131]: Streamer flushed completely: True
+2026-02-02 21:50:16,671 [38736-MainProcess:140704524992768] 8150 OPIK DEBUG [thread_pool.py:11]: Creating file upload thread pool with pool_size: 16, requested workers count: 16 
+2026-02-02 21:50:16,673 [38736-MainProcess:140704524992768] 8152 OPIK DEBUG [patchers.py:36]: Patched LlmResponse.create
+2026-02-02 21:50:16,673 [38736-MainProcess:140704524992768] 8152 OPIK DEBUG [patchers.py:48]: Patched LiteLLMClient.acompletion
+2026-02-02 21:50:16,673 [38736-MainProcess:140704524992768] 8152 OPIK DEBUG [patchers.py:60]: Patched _model_response_to_generate_content_response
+2026-02-02 21:50:16,673 [38736-MainProcess:140704524992768] 8152 OPIK DEBUG [patchers.py:76]: Patched ADK tracers
+2026-02-02 21:50:17,483 [38736-MainProcess:140704524992768] 8962 OPIK INFO [opik_client.py:204]: Started logging traces to the "Aaron" project at https://www.comet.com/opik/api/v1/session/redirect/projects/?trace_id=019c201e-d1e3-7703-8571-fbca62138ad9&path=aHR0cHM6Ly93d3cuY29tZXQuY29tL29waWsvYXBp.
+2026-02-02 21:50:17,497 [38736-MainProcess:123145598402560] 8976 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:50:17,497 [38736-MainProcess:123145598402560] 8976 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateTraceMessage.
+2026-02-02 21:50:17,500 [38736-MainProcess:123145615192064] 8980 OPIK DEBUG [online_message_processor.py:257]: Create spans batch request of size 1
+2026-02-02 21:50:17,502 [38736-MainProcess:123145598402560] 8981 OPIK DEBUG [online_message_processor.py:264]: Create trace batch request of size 1
+2026-02-02 21:50:18,617 [38736-MainProcess:123145615192064] 10096 OPIK DEBUG [online_message_processor.py:259]: Sent spans batch of size 1
+2026-02-02 21:50:18,718 [38736-MainProcess:123145598402560] 10197 OPIK DEBUG [online_message_processor.py:266]: Sent trace batch of size 1
+2026-02-02 21:50:18,722 [38736-MainProcess:140704524992768] 10201 OPIK DEBUG [streamer.py:131]: Streamer flushed completely: True
+2026-02-02 21:54:01,765 [38935-MainProcess:140704524992768] 9093 OPIK DEBUG [thread_pool.py:11]: Creating file upload thread pool with pool_size: 16, requested workers count: 16 
+2026-02-02 21:54:01,766 [38935-MainProcess:140704524992768] 9094 OPIK DEBUG [patchers.py:36]: Patched LlmResponse.create
+2026-02-02 21:54:01,767 [38935-MainProcess:140704524992768] 9094 OPIK DEBUG [patchers.py:48]: Patched LiteLLMClient.acompletion
+2026-02-02 21:54:01,767 [38935-MainProcess:140704524992768] 9095 OPIK DEBUG [patchers.py:60]: Patched _model_response_to_generate_content_response
+2026-02-02 21:54:01,767 [38935-MainProcess:140704524992768] 9095 OPIK DEBUG [patchers.py:76]: Patched ADK tracers
+2026-02-02 21:54:03,057 [38935-MainProcess:140704524992768] 10385 OPIK DEBUG [litellm_wrappers.py:85]: litellm_client_acompletion_decorator called: provider_and_model=groq/llama-3.1-8b-instant
+2026-02-02 21:54:03,058 [38935-MainProcess:140704524992768] 10385 OPIK DEBUG [litellm_wrappers.py:36]: generate_content_response_decorator called
+2026-02-02 21:54:03,059 [38935-MainProcess:140704524992768] 10387 OPIK DEBUG [litellm_wrappers.py:42]: generate_content_response_decorator: provider_and_model=groq/llama-3.1-8b-instant
+2026-02-02 21:54:03,059 [38935-MainProcess:140704524992768] 10387 OPIK DEBUG [litellm_wrappers.py:51]: generate_content_response_decorator: result.custom_metadata is None, creating new custom metadata
+2026-02-02 21:54:03,060 [38935-MainProcess:140704524992768] 10387 OPIK DEBUG [litellm_wrappers.py:57]: generate_content_response_decorator: provider=LLMProvider.GROQ, model=llama-3.1-8b-instant
+2026-02-02 21:54:03,060 [38935-MainProcess:140704524992768] 10387 OPIK DEBUG [litellm_wrappers.py:68]: generate_content_response_decorator finished: result.custom_metadata={'opik_usage': {'completion_tokens': 14, 'prompt_tokens': 318, 'total_tokens': 332, 'completion_tokens_details': None, 'prompt_tokens_details': None, 'queue_time': 0.336903586, 'prompt_time': 0.018548242, 'completion_time': 0.02371577, 'total_time': 0.042264012}, 'provider': <LLMProvider.GROQ: 'groq'>, 'model_version': 'llama-3.1-8b-instant'}
+2026-02-02 21:54:03,063 [38935-MainProcess:140704524992768] 10391 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'environment' was overwritten from 'development' to 'development' during the deep merge",)
+2026-02-02 21:54:03,063 [38935-MainProcess:140704524992768] 10391 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'model' was overwritten from 'gpt-4o' to 'gpt-4o' during the deep merge",)
+2026-02-02 21:54:03,063 [38935-MainProcess:140704524992768] 10391 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'framework' was overwritten from 'google-adk' to 'google-adk' during the deep merge",)
+2026-02-02 21:54:03,063 [38935-MainProcess:140704524992768] 10391 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'example' was overwritten from 'basic' to 'basic' during the deep merge",)
+2026-02-02 21:54:03,063 [38935-MainProcess:140704524992768] 10391 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'created_from' was overwritten from 'google-adk' to 'google-adk' during the deep merge",)
+2026-02-02 21:54:03,063 [38935-MainProcess:140704524992768] 10391 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key '_OPIK_SPAN_STATUS' was overwritten from 'ready_for_finalization' to 'ready_for_finalization' during the deep merge",)
+2026-02-02 21:54:03,063 [38935-MainProcess:140704524992768] 10391 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'time_to_first_token' was overwritten from '1.2823889255523682' to '1.2823889255523682' during the deep merge",)
+2026-02-02 21:54:03,067 [38935-MainProcess:123145496608768] 10394 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:54:03,069 [38935-MainProcess:123145513398272] 10397 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:54:03,443 [38935-MainProcess:140704524992768] 10771 OPIK DEBUG [litellm_wrappers.py:85]: litellm_client_acompletion_decorator called: provider_and_model=groq/llama-3.1-8b-instant
+2026-02-02 21:54:03,443 [38935-MainProcess:140704524992768] 10771 OPIK DEBUG [litellm_wrappers.py:36]: generate_content_response_decorator called
+2026-02-02 21:54:03,443 [38935-MainProcess:140704524992768] 10771 OPIK DEBUG [litellm_wrappers.py:42]: generate_content_response_decorator: provider_and_model=groq/llama-3.1-8b-instant
+2026-02-02 21:54:03,443 [38935-MainProcess:140704524992768] 10771 OPIK DEBUG [litellm_wrappers.py:51]: generate_content_response_decorator: result.custom_metadata is None, creating new custom metadata
+2026-02-02 21:54:03,444 [38935-MainProcess:140704524992768] 10771 OPIK DEBUG [litellm_wrappers.py:57]: generate_content_response_decorator: provider=LLMProvider.GROQ, model=llama-3.1-8b-instant
+2026-02-02 21:54:03,444 [38935-MainProcess:140704524992768] 10772 OPIK DEBUG [litellm_wrappers.py:68]: generate_content_response_decorator finished: result.custom_metadata={'opik_usage': {'completion_tokens': 14, 'prompt_tokens': 387, 'total_tokens': 401, 'completion_tokens_details': None, 'prompt_tokens_details': None, 'queue_time': 0.168348033, 'prompt_time': 0.026151438, 'completion_time': 0.01991002, 'total_time': 0.046061458}, 'provider': <LLMProvider.GROQ: 'groq'>, 'model_version': 'llama-3.1-8b-instant'}
+2026-02-02 21:54:03,445 [38935-MainProcess:140704524992768] 10772 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'environment' was overwritten from 'development' to 'development' during the deep merge",)
+2026-02-02 21:54:03,445 [38935-MainProcess:140704524992768] 10773 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'model' was overwritten from 'gpt-4o' to 'gpt-4o' during the deep merge",)
+2026-02-02 21:54:03,445 [38935-MainProcess:140704524992768] 10773 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'framework' was overwritten from 'google-adk' to 'google-adk' during the deep merge",)
+2026-02-02 21:54:03,445 [38935-MainProcess:140704524992768] 10773 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'example' was overwritten from 'basic' to 'basic' during the deep merge",)
+2026-02-02 21:54:03,445 [38935-MainProcess:140704524992768] 10773 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'created_from' was overwritten from 'google-adk' to 'google-adk' during the deep merge",)
+2026-02-02 21:54:03,445 [38935-MainProcess:140704524992768] 10773 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key '_OPIK_SPAN_STATUS' was overwritten from 'ready_for_finalization' to 'ready_for_finalization' during the deep merge",)
+2026-02-02 21:54:03,445 [38935-MainProcess:140704524992768] 10773 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'time_to_first_token' was overwritten from '0.3735780715942383' to '0.3735780715942383' during the deep merge",)
+2026-02-02 21:54:03,447 [38935-MainProcess:123145546977280] 10775 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:54:03,448 [38935-MainProcess:123145530187776] 10776 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:54:03,856 [38935-MainProcess:123145546977280] 11184 OPIK DEBUG [online_message_processor.py:257]: Create spans batch request of size 4
+2026-02-02 21:54:04,000 [38935-MainProcess:140704524992768] 11328 OPIK DEBUG [litellm_wrappers.py:85]: litellm_client_acompletion_decorator called: provider_and_model=groq/llama-3.1-8b-instant
+2026-02-02 21:54:04,001 [38935-MainProcess:140704524992768] 11328 OPIK DEBUG [litellm_wrappers.py:36]: generate_content_response_decorator called
+2026-02-02 21:54:04,001 [38935-MainProcess:140704524992768] 11329 OPIK DEBUG [litellm_wrappers.py:42]: generate_content_response_decorator: provider_and_model=groq/llama-3.1-8b-instant
+2026-02-02 21:54:04,001 [38935-MainProcess:140704524992768] 11329 OPIK DEBUG [litellm_wrappers.py:51]: generate_content_response_decorator: result.custom_metadata is None, creating new custom metadata
+2026-02-02 21:54:04,001 [38935-MainProcess:140704524992768] 11329 OPIK DEBUG [litellm_wrappers.py:57]: generate_content_response_decorator: provider=LLMProvider.GROQ, model=llama-3.1-8b-instant
+2026-02-02 21:54:04,001 [38935-MainProcess:140704524992768] 11329 OPIK DEBUG [litellm_wrappers.py:68]: generate_content_response_decorator finished: result.custom_metadata={'opik_usage': {'completion_tokens': 62, 'prompt_tokens': 441, 'total_tokens': 503, 'completion_tokens_details': None, 'prompt_tokens_details': None, 'queue_time': 0.211176798, 'prompt_time': 0.070141366, 'completion_time': 0.10701501, 'total_time': 0.177156376}, 'provider': <LLMProvider.GROQ: 'groq'>, 'model_version': 'llama-3.1-8b-instant'}
+2026-02-02 21:54:04,002 [38935-MainProcess:140704524992768] 11330 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'environment' was overwritten from 'development' to 'development' during the deep merge",)
+2026-02-02 21:54:04,002 [38935-MainProcess:140704524992768] 11330 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'model' was overwritten from 'gpt-4o' to 'gpt-4o' during the deep merge",)
+2026-02-02 21:54:04,002 [38935-MainProcess:140704524992768] 11330 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'framework' was overwritten from 'google-adk' to 'google-adk' during the deep merge",)
+2026-02-02 21:54:04,003 [38935-MainProcess:140704524992768] 11330 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'example' was overwritten from 'basic' to 'basic' during the deep merge",)
+2026-02-02 21:54:04,003 [38935-MainProcess:140704524992768] 11331 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'created_from' was overwritten from 'google-adk' to 'google-adk' during the deep merge",)
+2026-02-02 21:54:04,003 [38935-MainProcess:140704524992768] 11331 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key '_OPIK_SPAN_STATUS' was overwritten from 'ready_for_finalization' to 'ready_for_finalization' during the deep merge",)
+2026-02-02 21:54:04,003 [38935-MainProcess:140704524992768] 11331 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'time_to_first_token' was overwritten from '0.5519149303436279' to '0.5519149303436279' during the deep merge",)
+2026-02-02 21:54:04,004 [38935-MainProcess:140704524992768] 11332 OPIK INFO [opik_client.py:204]: Started logging traces to the "Aaron" project at https://www.comet.com/opik/api/v1/session/redirect/projects/?trace_id=019c2022-412b-71c7-9fa8-71b439e8d98f&path=aHR0cHM6Ly93d3cuY29tZXQuY29tL29waWsvYXBp.
+2026-02-02 21:54:04,064 [38935-MainProcess:123145530187776] 11392 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:54:04,065 [38935-MainProcess:123145530187776] 11393 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateTraceMessage.
+2026-02-02 21:54:04,788 [38935-MainProcess:123145546977280] 12116 OPIK DEBUG [online_message_processor.py:259]: Sent spans batch of size 4
+2026-02-02 21:54:04,793 [38935-MainProcess:140704524992768] 12121 OPIK DEBUG [streamer.py:131]: Streamer flushed completely: True
+2026-02-02 21:58:14,254 [39175-MainProcess:140704524992768] 8634 OPIK DEBUG [thread_pool.py:11]: Creating file upload thread pool with pool_size: 16, requested workers count: 16 
+2026-02-02 21:58:14,256 [39175-MainProcess:140704524992768] 8637 OPIK DEBUG [patchers.py:36]: Patched LlmResponse.create
+2026-02-02 21:58:14,256 [39175-MainProcess:140704524992768] 8637 OPIK DEBUG [patchers.py:48]: Patched LiteLLMClient.acompletion
+2026-02-02 21:58:14,256 [39175-MainProcess:140704524992768] 8637 OPIK DEBUG [patchers.py:60]: Patched _model_response_to_generate_content_response
+2026-02-02 21:58:14,256 [39175-MainProcess:140704524992768] 8637 OPIK DEBUG [patchers.py:76]: Patched ADK tracers
+2026-02-02 21:58:15,684 [39175-MainProcess:140704524992768] 10065 OPIK DEBUG [litellm_wrappers.py:85]: litellm_client_acompletion_decorator called: provider_and_model=groq/llama-3.1-8b-instant
+2026-02-02 21:58:15,684 [39175-MainProcess:140704524992768] 10065 OPIK DEBUG [litellm_wrappers.py:36]: generate_content_response_decorator called
+2026-02-02 21:58:15,685 [39175-MainProcess:140704524992768] 10066 OPIK DEBUG [litellm_wrappers.py:42]: generate_content_response_decorator: provider_and_model=groq/llama-3.1-8b-instant
+2026-02-02 21:58:15,685 [39175-MainProcess:140704524992768] 10066 OPIK DEBUG [litellm_wrappers.py:51]: generate_content_response_decorator: result.custom_metadata is None, creating new custom metadata
+2026-02-02 21:58:15,686 [39175-MainProcess:140704524992768] 10066 OPIK DEBUG [litellm_wrappers.py:57]: generate_content_response_decorator: provider=LLMProvider.GROQ, model=llama-3.1-8b-instant
+2026-02-02 21:58:15,686 [39175-MainProcess:140704524992768] 10067 OPIK DEBUG [litellm_wrappers.py:68]: generate_content_response_decorator finished: result.custom_metadata={'opik_usage': {'completion_tokens': 14, 'prompt_tokens': 318, 'total_tokens': 332, 'completion_tokens_details': None, 'prompt_tokens_details': None, 'queue_time': 0.171354174, 'prompt_time': 0.057637718, 'completion_time': 0.024774329, 'total_time': 0.082412047}, 'provider': <LLMProvider.GROQ: 'groq'>, 'model_version': 'llama-3.1-8b-instant'}
+2026-02-02 21:58:15,689 [39175-MainProcess:140704524992768] 10070 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'environment' was overwritten from 'development' to 'development' during the deep merge",)
+2026-02-02 21:58:15,689 [39175-MainProcess:140704524992768] 10070 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'model' was overwritten from 'gpt-4o' to 'gpt-4o' during the deep merge",)
+2026-02-02 21:58:15,689 [39175-MainProcess:140704524992768] 10070 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'framework' was overwritten from 'google-adk' to 'google-adk' during the deep merge",)
+2026-02-02 21:58:15,690 [39175-MainProcess:140704524992768] 10070 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'example' was overwritten from 'basic' to 'basic' during the deep merge",)
+2026-02-02 21:58:15,690 [39175-MainProcess:140704524992768] 10070 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'created_from' was overwritten from 'google-adk' to 'google-adk' during the deep merge",)
+2026-02-02 21:58:15,690 [39175-MainProcess:140704524992768] 10071 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key '_OPIK_SPAN_STATUS' was overwritten from 'ready_for_finalization' to 'ready_for_finalization' during the deep merge",)
+2026-02-02 21:58:15,690 [39175-MainProcess:140704524992768] 10071 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'time_to_first_token' was overwritten from '1.4224646091461182' to '1.4224646091461182' during the deep merge",)
+2026-02-02 21:58:15,717 [39175-MainProcess:123145584553984] 10098 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:58:15,718 [39175-MainProcess:123145584553984] 10099 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:58:16,065 [39175-MainProcess:140704524992768] 10446 OPIK DEBUG [litellm_wrappers.py:85]: litellm_client_acompletion_decorator called: provider_and_model=groq/llama-3.1-8b-instant
+2026-02-02 21:58:16,065 [39175-MainProcess:140704524992768] 10446 OPIK DEBUG [litellm_wrappers.py:36]: generate_content_response_decorator called
+2026-02-02 21:58:16,066 [39175-MainProcess:140704524992768] 10447 OPIK DEBUG [litellm_wrappers.py:42]: generate_content_response_decorator: provider_and_model=groq/llama-3.1-8b-instant
+2026-02-02 21:58:16,066 [39175-MainProcess:140704524992768] 10447 OPIK DEBUG [litellm_wrappers.py:51]: generate_content_response_decorator: result.custom_metadata is None, creating new custom metadata
+2026-02-02 21:58:16,066 [39175-MainProcess:140704524992768] 10447 OPIK DEBUG [litellm_wrappers.py:57]: generate_content_response_decorator: provider=LLMProvider.GROQ, model=llama-3.1-8b-instant
+2026-02-02 21:58:16,066 [39175-MainProcess:140704524992768] 10447 OPIK DEBUG [litellm_wrappers.py:68]: generate_content_response_decorator finished: result.custom_metadata={'opik_usage': {'completion_tokens': 14, 'prompt_tokens': 387, 'total_tokens': 401, 'completion_tokens_details': None, 'prompt_tokens_details': None, 'queue_time': 0.173038706, 'prompt_time': 0.02968795, 'completion_time': 0.020881011, 'total_time': 0.050568961}, 'provider': <LLMProvider.GROQ: 'groq'>, 'model_version': 'llama-3.1-8b-instant'}
+2026-02-02 21:58:16,067 [39175-MainProcess:140704524992768] 10447 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'environment' was overwritten from 'development' to 'development' during the deep merge",)
+2026-02-02 21:58:16,067 [39175-MainProcess:140704524992768] 10447 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'model' was overwritten from 'gpt-4o' to 'gpt-4o' during the deep merge",)
+2026-02-02 21:58:16,067 [39175-MainProcess:140704524992768] 10448 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'framework' was overwritten from 'google-adk' to 'google-adk' during the deep merge",)
+2026-02-02 21:58:16,067 [39175-MainProcess:140704524992768] 10448 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'example' was overwritten from 'basic' to 'basic' during the deep merge",)
+2026-02-02 21:58:16,067 [39175-MainProcess:140704524992768] 10448 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'created_from' was overwritten from 'google-adk' to 'google-adk' during the deep merge",)
+2026-02-02 21:58:16,067 [39175-MainProcess:140704524992768] 10448 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key '_OPIK_SPAN_STATUS' was overwritten from 'ready_for_finalization' to 'ready_for_finalization' during the deep merge",)
+2026-02-02 21:58:16,067 [39175-MainProcess:140704524992768] 10448 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'time_to_first_token' was overwritten from '0.37076711654663086' to '0.37076711654663086' during the deep merge",)
+2026-02-02 21:58:16,127 [39175-MainProcess:123145634922496] 10508 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:58:16,127 [39175-MainProcess:123145584553984] 10508 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:58:16,334 [39175-MainProcess:123145601343488] 10715 OPIK DEBUG [online_message_processor.py:257]: Create spans batch request of size 4
+2026-02-02 21:58:16,542 [39175-MainProcess:140704524992768] 10923 OPIK DEBUG [litellm_wrappers.py:85]: litellm_client_acompletion_decorator called: provider_and_model=groq/llama-3.1-8b-instant
+2026-02-02 21:58:16,542 [39175-MainProcess:140704524992768] 10923 OPIK DEBUG [litellm_wrappers.py:36]: generate_content_response_decorator called
+2026-02-02 21:58:16,543 [39175-MainProcess:140704524992768] 10923 OPIK DEBUG [litellm_wrappers.py:42]: generate_content_response_decorator: provider_and_model=groq/llama-3.1-8b-instant
+2026-02-02 21:58:16,543 [39175-MainProcess:140704524992768] 10924 OPIK DEBUG [litellm_wrappers.py:51]: generate_content_response_decorator: result.custom_metadata is None, creating new custom metadata
+2026-02-02 21:58:16,543 [39175-MainProcess:140704524992768] 10924 OPIK DEBUG [litellm_wrappers.py:57]: generate_content_response_decorator: provider=LLMProvider.GROQ, model=llama-3.1-8b-instant
+2026-02-02 21:58:16,543 [39175-MainProcess:140704524992768] 10924 OPIK DEBUG [litellm_wrappers.py:68]: generate_content_response_decorator finished: result.custom_metadata={'opik_usage': {'completion_tokens': 22, 'prompt_tokens': 441, 'total_tokens': 463, 'completion_tokens_details': None, 'prompt_tokens_details': None, 'queue_time': 0.239109529, 'prompt_time': 0.044444046, 'completion_time': 0.043039532, 'total_time': 0.087483578}, 'provider': <LLMProvider.GROQ: 'groq'>, 'model_version': 'llama-3.1-8b-instant'}
+2026-02-02 21:58:16,544 [39175-MainProcess:140704524992768] 10925 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'environment' was overwritten from 'development' to 'development' during the deep merge",)
+2026-02-02 21:58:16,544 [39175-MainProcess:140704524992768] 10925 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'model' was overwritten from 'gpt-4o' to 'gpt-4o' during the deep merge",)
+2026-02-02 21:58:16,544 [39175-MainProcess:140704524992768] 10925 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'framework' was overwritten from 'google-adk' to 'google-adk' during the deep merge",)
+2026-02-02 21:58:16,544 [39175-MainProcess:140704524992768] 10925 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'example' was overwritten from 'basic' to 'basic' during the deep merge",)
+2026-02-02 21:58:16,544 [39175-MainProcess:140704524992768] 10925 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'created_from' was overwritten from 'google-adk' to 'google-adk' during the deep merge",)
+2026-02-02 21:58:16,544 [39175-MainProcess:140704524992768] 10925 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key '_OPIK_SPAN_STATUS' was overwritten from 'ready_for_finalization' to 'ready_for_finalization' during the deep merge",)
+2026-02-02 21:58:16,544 [39175-MainProcess:140704524992768] 10925 OPIK DEBUG [dict_utils.py:52]: ("Trace or span metadata value for the sub-key 'time_to_first_token' was overwritten from '0.47358012199401855' to '0.47358012199401855' during the deep merge",)
+2026-02-02 21:58:16,545 [39175-MainProcess:140704524992768] 10926 OPIK INFO [opik_client.py:204]: Started logging traces to the "Aaron" project at https://www.comet.com/opik/api/v1/session/redirect/projects/?trace_id=019c2026-1b74-7b99-b181-9baa1fb555cd&path=aHR0cHM6Ly93d3cuY29tZXQuY29tL29waWsvYXBp.
+2026-02-02 21:58:16,547 [39175-MainProcess:123145634922496] 10927 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateSpanMessage.
+2026-02-02 21:58:16,547 [39175-MainProcess:123145634922496] 10928 OPIK DEBUG [attachments_extraction_processor.py:115]: No attachments found in the message - CreateTraceMessage.
+2026-02-02 21:58:16,559 [39175-MainProcess:123145634922496] 10940 OPIK DEBUG [online_message_processor.py:257]: Create spans batch request of size 1
+2026-02-02 21:58:16,560 [39175-MainProcess:123145618132992] 10941 OPIK DEBUG [online_message_processor.py:264]: Create trace batch request of size 1
+2026-02-02 21:58:17,200 [39175-MainProcess:123145601343488] 11581 OPIK DEBUG [online_message_processor.py:259]: Sent spans batch of size 4
+2026-02-02 21:58:17,508 [39175-MainProcess:123145618132992] 11889 OPIK DEBUG [online_message_processor.py:266]: Sent trace batch of size 1
+2026-02-02 21:58:17,511 [39175-MainProcess:123145634922496] 11892 OPIK DEBUG [online_message_processor.py:259]: Sent spans batch of size 1
+2026-02-02 21:58:17,514 [39175-MainProcess:140704524992768] 11895 OPIK DEBUG [streamer.py:131]: Streamer flushed completely: True
