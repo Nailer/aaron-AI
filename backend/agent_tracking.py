@@ -1,7 +1,9 @@
 import datetime
 import asyncio
-from zoneinfo import ZoneInfo
+import asyncio
 
+from litellm.exceptions import RateLimitError
+from zoneinfo import ZoneInfo
 from google.adk.agents import LlmAgent
 from google.adk.models.lite_llm import LiteLlm
 from opik.integrations.adk import OpikTracer, track_adk_agent_recursive
@@ -41,8 +43,15 @@ def get_current_time(city: str) -> dict:
         }
     return {"status": "error", "error_message": f"No timezone info for '{city}'."}
 
+# Initialize LiteLLM with OpenAI gpt-4o with temperature and max_tokens to reduce cost
+llm = LiteLlm(
+    model="groq/llama-3.1-8b-instant",
+    temperature=0.2,
+    max_tokens=300   # LIMIT RESPONSE SIZE
+)
+
 # Initialize LiteLLM with OpenAI gpt-4o
-llm = LiteLlm(model="groq/llama-3.1-8b-instant")
+# llm = LiteLlm(model="groq/llama-3.1-8b-instant")
 
 # Create the basic agent
 basic_agent = LlmAgent(
@@ -52,6 +61,14 @@ basic_agent = LlmAgent(
     instruction="Answer questions about the time or weather in a city. Be helpful and provide clear information.",
     tools=[get_weather, get_current_time],
 )
+
+# adjusted instructions to read ready-made data
+# instruction=(
+#     "You are a weather and time assistant.\n"
+#     "When a user asks about weather, you MUST call the 'get_weather' tool.\n"
+#     "When a user asks about time, you MUST call the 'get_current_time' tool.\n"
+#     "Do NOT answer from memory. Always use the provided tools."
+# )
 
 # Configure Opik tracer
 opik_tracer = OpikTracer(
@@ -99,3 +116,23 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+    
+# this is the snippet that tends to reduce the cost per minute by waiting for 10 seconds when rate limit is hit
+async def safe_run():
+    for attempt in range(3):
+        try:
+            async for event in runner.run_async(
+                user_id="test_user",
+                session_id=session.id,
+                new_message=user_message,
+            ):
+                if event.content and event.content.parts:
+                    for part in event.content.parts:
+                        if hasattr(part, "text") and part.text:
+                            print("Assistant:", part.text)
+            break
+        except RateLimitError:
+            print("Rate limit hit. Waiting 10 seconds...")
+            await asyncio.sleep(10)
+
+await safe_run()
