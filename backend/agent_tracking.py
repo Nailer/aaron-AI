@@ -1,6 +1,8 @@
 import datetime
 import asyncio
 import asyncio
+import asyncio
+import litellm
 
 from litellm.exceptions import RateLimitError
 from zoneinfo import ZoneInfo
@@ -11,37 +13,58 @@ from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.genai import types
 
-def get_weather(city: str) -> dict:
-    """Get weather information for a city."""
-    if city.lower() == "new york":
-        return {
-            "status": "success",
-            "report": "The weather in New York is sunny with a temperature of 25 °C (77 °F).",
-        }
-    elif city.lower() == "london":
-        return {
-            "status": "success",
-            "report": "The weather in London is cloudy with a temperature of 18 °C (64 °F).",
-        }
-    return {"status": "error", "error_message": f"Weather info for '{city}' is unavailable."}
+# this is the prompt for the weather agent but it is not needed for now
+# def get_weather(city: str) -> dict:
+#     """Get weather information for a city."""
+#     if city.lower() == "new york":
+#         return {
+#             "status": "success",
+#             "report": "The weather in New York is sunny with a temperature of 25 °C (77 °F).",
+#         }
+#     elif city.lower() == "london":
+#         return {
+#             "status": "success",
+#             "report": "The weather in London is cloudy with a temperature of 18 °C (64 °F).",
+#         }
+#     return {"status": "error", "error_message": f"Weather info for '{city}' is unavailable."}
 
-def get_current_time(city: str) -> dict:
-    """Get current time for a city."""
-    if city.lower() == "new york":
-        tz = ZoneInfo("America/New_York")
-        now = datetime.datetime.now(tz)
+# def get_current_time(city: str) -> dict:
+#     """Get current time for a city."""
+#     if city.lower() == "new york":
+#         tz = ZoneInfo("America/New_York")
+#         now = datetime.datetime.now(tz)
+#         return {
+#             "status": "success",
+#             "report": now.strftime(f"The current time in {city} is %Y-%m-%d %H:%M:%S %Z%z."),
+#         }
+#     elif city.lower() == "london":
+#         tz = ZoneInfo("Europe/London")
+#         now = datetime.datetime.now(tz)
+#         return {
+#             "status": "success",
+#             "report": now.strftime(f"The current time in {city} is %Y-%m-%d %H:%M:%S %Z%z."),
+#         }
+#     return {"status": "error", "error_message": f"No timezone info for '{city}'."}
+
+
+def calculate_savings(goal: float, monthly_income: float, monthly_expenses: float) -> dict:
+    savings_per_month = monthly_income - monthly_expenses
+    months_needed = goal / savings_per_month if savings_per_month > 0 else None
+
+    if months_needed:
         return {
             "status": "success",
-            "report": now.strftime(f"The current time in {city} is %Y-%m-%d %H:%M:%S %Z%z."),
+            "report": f"You can reach your goal in about {round(months_needed,1)} months by saving ₦{savings_per_month} monthly."
         }
-    elif city.lower() == "london":
-        tz = ZoneInfo("Europe/London")
-        now = datetime.datetime.now(tz)
-        return {
-            "status": "success",
-            "report": now.strftime(f"The current time in {city} is %Y-%m-%d %H:%M:%S %Z%z."),
-        }
-    return {"status": "error", "error_message": f"No timezone info for '{city}'."}
+    return {"status": "error", "error_message": "Expenses exceed income."}
+
+
+def budgeting_advice(income: float) -> dict:
+    return {
+        "status": "success",
+        "report": f"A good rule is 50% needs, 30% wants, 20% savings. For your income of ₦{income}, aim to save ₦{income*0.2:.0f} monthly."
+    }
+
 
 # Initialize LiteLLM with OpenAI gpt-4o with temperature and max_tokens to reduce cost
 llm = LiteLlm(
@@ -53,14 +76,27 @@ llm = LiteLlm(
 # Initialize LiteLLM with OpenAI gpt-4o
 # llm = LiteLlm(model="groq/llama-3.1-8b-instant")
 
-# Create the basic agent
+# Create the financial coach agent
 basic_agent = LlmAgent(
-    name="weather_time_agent",
+    name="financial_coach_agent",
     model=llm,
-    description="Agent for answering time & weather questions",
-    instruction="Answer questions about the time or weather in a city. Be helpful and provide clear information.",
-    tools=[get_weather, get_current_time],
+    description="AI financial planning assistant",
+    instruction=(
+        "You are a financial coach.\n"
+        "Use tools whenever math or planning is required.\n"
+        "Help users save money and plan towards financial goals."
+    ),
+    tools=[calculate_savings, budgeting_advice],
 )
+
+# Create the basic agent
+# basic_agent = LlmAgent(
+#     name="weather_time_agent",
+#     model=llm,
+#     description="Agent for answering time & weather questions",
+#     instruction="Answer questions about the time or weather in a city. Be helpful and provide clear information.",
+#     tools=[get_weather, get_current_time],
+# )
 
 # adjusted instructions to read ready-made data
 # instruction=(
@@ -103,7 +139,7 @@ async def main():
 
     user_message = types.Content(
         role="user",
-        parts=[types.Part(text="What's the weather in London?")]
+        parts=[types.Part(text="My monthly income is 500000 naira, expenses are 350000, and I want to save 2 million. Can I do it?")]
     )
 
     async for event in runner.run_async(
@@ -134,5 +170,15 @@ async def safe_run():
         except RateLimitError:
             print("Rate limit hit. Waiting 10 seconds...")
             await asyncio.sleep(10)
+            await safe_run()
 
-await safe_run()
+
+async def safe_completion(**kwargs):
+    for attempt in range(3):  # retry up to 3 times
+        try:
+            return await litellm.acompletion(**kwargs)
+        except litellm.exceptions.RateLimitError as e:
+            wait_time = 2  # seconds (you can make this smarter)
+            print(f"Rate limited. Retrying in {wait_time}s...")
+            await asyncio.sleep(wait_time)
+    raise Exception("Still rate limited after retries")
