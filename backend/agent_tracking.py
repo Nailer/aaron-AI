@@ -1,10 +1,9 @@
 import datetime
 import asyncio
-from dotenv import load_dotenv
-
-load_dotenv()
+import asyncio
 import litellm
 
+from dotenv import load_dotenv
 from litellm.exceptions import RateLimitError
 from zoneinfo import ZoneInfo
 from google.adk.agents import LlmAgent
@@ -13,39 +12,7 @@ from opik.integrations.adk import OpikTracer, track_adk_agent_recursive
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.genai import types
-
-# this is the prompt for the weather agent but it is not needed for now
-# def get_weather(city: str) -> dict:
-#     """Get weather information for a city."""
-#     if city.lower() == "new york":
-#         return {
-#             "status": "success",
-#             "report": "The weather in New York is sunny with a temperature of 25 °C (77 °F).",
-#         }
-#     elif city.lower() == "london":
-#         return {
-#             "status": "success",
-#             "report": "The weather in London is cloudy with a temperature of 18 °C (64 °F).",
-#         }
-#     return {"status": "error", "error_message": f"Weather info for '{city}' is unavailable."}
-
-# def get_current_time(city: str) -> dict:
-#     """Get current time for a city."""
-#     if city.lower() == "new york":
-#         tz = ZoneInfo("America/New_York")
-#         now = datetime.datetime.now(tz)
-#         return {
-#             "status": "success",
-#             "report": now.strftime(f"The current time in {city} is %Y-%m-%d %H:%M:%S %Z%z."),
-#         }
-#     elif city.lower() == "london":
-#         tz = ZoneInfo("Europe/London")
-#         now = datetime.datetime.now(tz)
-#         return {
-#             "status": "success",
-#             "report": now.strftime(f"The current time in {city} is %Y-%m-%d %H:%M:%S %Z%z."),
-#         }
-#     return {"status": "error", "error_message": f"No timezone info for '{city}'."}
+load_dotenv()
 
 
 def calculate_savings(goal: float, monthly_income: float, monthly_expenses: float) -> dict:
@@ -79,49 +46,18 @@ llm = LiteLlm(
 
 # Create the financial coach agent
 basic_agent = LlmAgent(
-    name="financial_coach_agent",
+    name="aaron_ai_coach",
     model=llm,
-    description="AI financial planning assistant",
+    description="Proactive Financial Goal Guardian",
     instruction=(
-        "You are a financial coach.\n"
-        "Use tools whenever math or planning is required.\n"
-        "Help users save money and plan towards financial goals."
+        "You are Aaron AI, a personalized financial guardian. "
+        "Your goal is to help users reach their 2026 resolutions. "
+        "Always factor in the user's Risk Appetite and Income Predictability. "
+        "If a user has 'Low' risk appetite, suggest conservative saving over investing. "
+        "Explain advice according to the user's 'Advice Preference' (e.g., plain language vs technical)."
     ),
     tools=[calculate_savings, budgeting_advice],
 )
-
-# Create the basic agent
-# basic_agent = LlmAgent(
-#     name="weather_time_agent",
-#     model=llm,
-#     description="Agent for answering time & weather questions",
-#     instruction="Answer questions about the time or weather in a city. Be helpful and provide clear information.",
-#     tools=[get_weather, get_current_time],
-# )
-
-# adjusted instructions to read ready-made data
-# instruction=(
-#     "You are a weather and time assistant.\n"
-#     "When a user asks about weather, you MUST call the 'get_weather' tool.\n"
-#     "When a user asks about time, you MUST call the 'get_current_time' tool.\n"
-#     "Do NOT answer from memory. Always use the provided tools."
-# )
-
-# Configure Opik tracer
-# opik_tracer = OpikTracer(
-#     name="basic-weather-agent",
-#     tags=["basic", "weather", "time", "single-agent"],
-#     metadata={
-#         "environment": "development",
-#         "model": "gpt-4o",
-#         "framework": "google-adk",
-#         "example": "basic"
-#     },
-#     project_name="Aaron"
-# )
-
-# Instrument the agent with a single function call - this is the recommended approach
-# track_adk_agent_recursive(basic_agent, opik_tracer)
 
 # from chatGPT
 session_service = InMemorySessionService()
@@ -131,49 +67,6 @@ runner = Runner(
     session_service=session_service,
 )
 
-# async def main():
-#     session = await session_service.create_session(
-#         app_name="financial_coach_app",
-#         user_id="test_user",
-#         session_id="session_001",
-#     )
-
-#     user_message = types.Content(
-#         role="user",
-#         parts=[types.Part(text="My monthly income is 500000 naira, expenses are 350000, and I want to save 2 million. Can I do it?")]
-#     )
-
-#     async for event in runner.run_async(
-#         user_id="test_user",
-#         session_id=session.id,
-#         new_message=user_message,
-#     ):
-#         if event.is_final_response():
-#             print("Assistant:", event.content.parts[0].text)
-
-# if __name__ == "__main__":
-#     asyncio.run(main())
-    
-# this is the snippet that tends to reduce the cost per minute by waiting for 10 seconds when rate limit is hit
-# async def safe_run():
-#     for attempt in range(3):
-#         try:
-#             async for event in runner.run_async(
-#                 user_id="test_user",
-#                 session_id=session.id,
-#                 new_message=user_message,
-#             ):
-#                 if event.content and event.content.parts:
-#                     for part in event.content.parts:
-#                         if hasattr(part, "text") and part.text:
-#                             print("Assistant:", part.text)
-#             break
-#         except RateLimitError:
-#             print("Rate limit hit. Waiting 10 seconds...")
-#             await asyncio.sleep(10)
-#             await safe_run()
-
-import asyncio
 from litellm.exceptions import RateLimitError
 
 async def safe_run(runner, user_id, session_id, user_message):
@@ -213,15 +106,41 @@ async def main():
         session_id="session_001",
     )
 
-    # 2. Define the goal-oriented message
-    user_message = types.Content(
-        role="user",
-        parts=[types.Part(text="My monthly income is 500,000 naira, expenses are 350,000, and I want to save 2 million. Can I do it?")]
+    # 2. Structured Onboarding Data
+    # In a real app, these come from your frontend form
+    user_profile = {
+        "goal_description": "Save for a professional certification and a new laptop",
+        "target_savings": 2000000,
+        "annual_income": 6000000,
+        "monthly_expenses": 350000,
+        "timeframe": "1 Year (Target 2027)",
+        "risk_appetite": "Low (Prefers safety)",
+        "income_predictability": "Stable (Monthly salary)",
+        "intervention_level": "When I'm about to spend > 50,000 naira",
+        "advice_style": "Plain language and encouraging"
+    }
+
+    # 3. Create the 'Onboarding' prompt
+    onboarding_text = (
+        f"Hello Aaron AI. Here is my financial profile:\n"
+        f"- Goal: {user_profile['goal_description']}\n"
+        f"- Target: ₦{user_profile['target_savings']}\n"
+        f"- Monthly Income: ₦{user_profile['annual_income']/12}\n"
+        f"- Monthly Expenses: ₦{user_profile['monthly_expenses']}\n"
+        f"- Timeframe: {user_profile['timeframe']}\n"
+        f"- Risk Appetite: {user_profile['risk_appetite']}\n"
+        f"- Advice Style: {user_profile['advice_style']}\n\n"
+        "Please analyze if my goal is realistic and give me my first steps."
     )
 
-    print("--- Aaron AI is thinking ---")
+    user_message = types.Content(
+        role="user",
+        parts=[types.Part(text=onboarding_text)]
+    )
 
-    # 3. Call the safe_run function
+    print(f"--- {basic_agent.name} is analyzing your profile ---")
+
+    # 4. Run the safe_run
     response = await safe_run(
         runner=runner, 
         user_id="test_user", 
@@ -229,7 +148,7 @@ async def main():
         user_message=user_message
     )
     
-    print(f"Assistant: {response}")
+    print(f"\nAaron AI: {response}")
 
 if __name__ == "__main__":
     asyncio.run(main())
