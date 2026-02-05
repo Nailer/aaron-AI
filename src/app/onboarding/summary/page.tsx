@@ -28,6 +28,17 @@ export default function SummaryPage() {
       {/* Main Content */}
       <div className="w-full max-w-2xl animate-fade-in relative z-10">
         
+        {/* Progress Section */}
+        <div className="w-full max-w-2xl mb-8 animate-fade-in mx-auto">
+          <div className="flex justify-between items-end mb-2">
+            <h2 className="font-semibold text-lg">Phase 4: Confirmation</h2>
+            <span className="text-xs font-bold text-green-500 bg-green-500/10 px-2 py-1 rounded">100% COMPLETE</span>
+          </div>
+          <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+            <div className="h-full w-full bg-green-500 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.5)]"></div>
+          </div>
+        </div>
+
         {/* Header */}
         <div className="text-center mb-10">
           <div className="w-16 h-16 bg-gradient-to-tr from-green-500 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-[0_0_30px_rgba(34,197,94,0.3)] animate-slide-up">

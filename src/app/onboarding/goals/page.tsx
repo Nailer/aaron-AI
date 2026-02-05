@@ -25,7 +25,7 @@ export default function GoalsPage() {
 
   const handleContinue = () => {
     // Add any validation here if needed
-    router.push('/onboarding/summary');
+    router.push('/onboarding/additional-info');
   };
 
   return (
@@ -76,7 +76,7 @@ export default function GoalsPage() {
 
         {/* Hero Text */}
         <div className="text-center mb-10 max-w-2xl animate-fade-in [animation-delay:100ms]">
-          <h1 className="text-3xl sm:text-4xl font-bold mb-4">Let's turn your vision into a roadmap.</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold mb-4">Financial Resolution Setup</h1>
           <p className="text-slate-400 text-lg">
             We'll ask a few questions to understand your lifestyle and financial aspirations. 
             No spreadsheets required.
@@ -147,24 +147,64 @@ export default function GoalsPage() {
                 </div>
               </div>
 
-              {/* Slider */}
+              {/* Income Input Section */}
               <div className="space-y-4">
                 <div className="flex justify-between items-end">
                   <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Estimated Annual Income</label>
-                  <span className="text-xl font-bold text-blue-400">${data.annualIncome.toLocaleString()}</span>
+                  
+                  {/* Editable Amount Display */}
+                  <div className="relative group">
+                    <span className="absolute left-0 top-1/2 -translate-y-1/2 text-xl font-bold text-blue-400 pointer-events-none">$</span>
+                    <input
+                      type="text"
+                      className="text-right text-xl font-bold text-blue-400 bg-transparent border-b border-dashed border-blue-500/30 hover:border-blue-500 focus:border-blue-500 focus:outline-none w-40 pb-0.5 transition-colors placeholder:text-blue-500/30"
+                      value={data.annualIncome === 0 ? "" : data.annualIncome.toLocaleString()}
+                      onChange={(e) => {
+                        // Remove non-numeric chars
+                        const rawValue = e.target.value.replace(/[^0-9]/g, '');
+                        // Limit to reasonable length to prevent overflow
+                        if (rawValue.length > 9) return; 
+                        updateData({ annualIncome: Number(rawValue) });
+                      }}
+                      placeholder="0"
+                    />
+                  </div>
                 </div>
-                <input 
-                  type="range" 
-                  min="30000" 
-                  max="500000" 
-                  step="5000"
-                  value={data.annualIncome}
-                  onChange={(e) => updateData({ annualIncome: Number(e.target.value) })}
-                  className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-500 active:accent-blue-400"
-                />
-                <div className="flex justify-between text-xs text-slate-600 font-medium">
-                  <span>$30k</span>
-                  <span>$500k+</span>
+
+                <div className="relative">
+                  {/* Custom Styled Range Slider */}
+                  <input 
+                    type="range" 
+                    min="0" 
+                    max="500000" 
+                    step="1000"
+                    value={Math.min(data.annualIncome, 500000)}
+                    onChange={(e) => updateData({ annualIncome: Number(e.target.value) })}
+                    className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-blue-500 active:accent-blue-400 relative z-10"
+                  />
+                  
+                  {/* Progress Bar Effect (CSS hack to color left side) */}
+                  <div 
+                    className="absolute top-0 left-0 h-2 bg-blue-600 rounded-lg pointer-events-none z-0"
+                    style={{ 
+                      width: `${Math.min((data.annualIncome / 500000) * 100, 100)}%` 
+                    }}
+                  ></div>
+                </div>
+
+                <div className="flex justify-between text-xs text-slate-600 font-medium px-0.5">
+                  <button 
+                    onClick={() => updateData({ annualIncome: 30000 })}
+                    className="hover:text-blue-400 transition-colors"
+                  >
+                    $30k
+                  </button>
+                  <button 
+                    onClick={() => updateData({ annualIncome: 500000 })}
+                    className="hover:text-blue-400 transition-colors"
+                  >
+                    $500k+
+                  </button>
                 </div>
               </div>
 
@@ -175,16 +215,43 @@ export default function GoalsPage() {
                 <div className="space-y-3">
                   <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">Timeframe</label>
                   <div className="relative">
-                    <select 
-                      value={data.timeframe}
-                      onChange={(e) => updateData({ timeframe: e.target.value })}
-                      className="w-full bg-[#171C28] border border-white/5 rounded-xl px-4 py-3 text-white appearance-none focus:outline-none focus:ring-1 focus:ring-blue-500/50"
-                    >
-                      <option>1 Year (Target 2027)</option>
-                      <option>2 Years (Target 2028)</option>
-                      <option>5 Years (Target 2031)</option>
-                    </select>
-                    <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none" size={16} />
+                    {data.timeframe.startsWith("Custom") ? (
+                      <div className="relative animate-fade-in">
+                         <select 
+                          value={data.timeframe}
+                          onChange={(e) => {
+                             if (e.target.value === "back") {
+                               updateData({ timeframe: "2 Years (Target 2028)" }); // Reset to default
+                             } else {
+                               updateData({ timeframe: e.target.value });
+                             }
+                          }}
+                          className="w-full bg-[#171C28] border border-blue-500/50 rounded-xl px-4 py-3 text-white appearance-none focus:outline-none focus:ring-1 focus:ring-blue-500/50"
+                        >
+                          <option value="Custom" disabled>Select Target Year</option>
+                          {Array.from({ length: 30 }, (_, i) => {
+                             const year = new Date().getFullYear() + i + 1;
+                             return <option key={year} value={`Custom (${year})`}>{year}</option>;
+                          })} 
+                          <option value="back">← Back to Presets</option>
+                        </select>
+                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-blue-400 pointer-events-none" size={16} />
+                      </div>
+                    ) : (
+                      <div className="relative">
+                        <select 
+                          value={data.timeframe}
+                          onChange={(e) => updateData({ timeframe: e.target.value })}
+                          className="w-full bg-[#171C28] border border-white/5 rounded-xl px-4 py-3 text-white appearance-none focus:outline-none focus:ring-1 focus:ring-blue-500/50"
+                        >
+                          <option>1 Year (Target 2027)</option>
+                          <option>2 Years (Target 2028)</option>
+                          <option>5 Years (Target 2031)</option>
+                          <option value="Custom">Custom...</option>
+                        </select>
+                        <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none" size={16} />
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -206,6 +273,109 @@ export default function GoalsPage() {
                        </button>
                     ))}
                   </div>
+                </div>
+              </div>
+
+              
+              {/* === NEW QUESTIONS SECTION === */}
+
+              {/* 1. Income Predictability */}
+              <div className="space-y-3">
+                <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">How predictable is your monthly income?</label>
+                <input 
+                  type="text" 
+                  value={data.incomePredictability}
+                  onChange={(e) => updateData({ incomePredictability: e.target.value })}
+                  placeholder="e.g. Fixed Salary, Variable, Seasonal..."
+                  className="w-full bg-[#171C28] border border-white/5 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
+                />
+                <div className="flex flex-wrap gap-2">
+                   {['Fixed Salary', 'Variable Commission', 'Freelance / Irregular'].map((opt) => (
+                     <button 
+                       key={opt}
+                       onClick={() => updateData({ incomePredictability: opt })}
+                       className="px-3 py-1.5 rounded-lg bg-[#171C28] border border-white/5 text-xs text-slate-400 hover:text-white hover:border-blue-500/50 transition-colors"
+                     >
+                       {opt}
+                     </button>
+                   ))}
+                </div>
+              </div>
+
+              {/* 2. Savings Target */}
+              <div className="space-y-3">
+                <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">If your goal involves saving, how much do you want to save?</label>
+                <input 
+                  type="text" 
+                  value={data.savingsTarget}
+                  onChange={(e) => updateData({ savingsTarget: e.target.value })}
+                  placeholder="e.g. $10,000, 20% of income..."
+                  className="w-full bg-[#171C28] border border-white/5 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
+                />
+                <div className="flex flex-wrap gap-2">
+                   {['$10,000', '$50,000', '10% of Income', '20% of Income'].map((opt) => (
+                     <button 
+                       key={opt}
+                       onClick={() => updateData({ savingsTarget: opt })}
+                       className="px-3 py-1.5 rounded-lg bg-[#171C28] border border-white/5 text-xs text-slate-400 hover:text-white hover:border-blue-500/50 transition-colors"
+                     >
+                       {opt}
+                     </button>
+                   ))}
+                </div>
+              </div>
+
+              {/* 3. AI Intervention */}
+              <div className="space-y-3">
+                <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">When should the AI step in to help you decide?</label>
+                <input 
+                  type="text" 
+                  value={data.aiInterventionPreference}
+                  onChange={(e) => updateData({ aiInterventionPreference: e.target.value })}
+                  placeholder="Type your preference..."
+                  className="w-full bg-[#171C28] border border-white/5 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
+                />
+                <div className="flex flex-wrap gap-2">
+                   {['Before discretionary spending', 'When I ask', 'Weekly reviews only', 'High-risk decisions only'].map((opt) => (
+                     <button 
+                       key={opt}
+                       onClick={() => updateData({ aiInterventionPreference: opt })}
+                       className={`px-3 py-1.5 rounded-lg border text-xs transition-colors ${
+                         data.aiInterventionPreference === opt 
+                           ? 'bg-blue-600/20 border-blue-500 text-blue-300' 
+                           : 'bg-[#171C28] border-white/5 text-slate-400 hover:text-white hover:border-blue-500/50'
+                       }`}
+                     >
+                       {opt}
+                     </button>
+                   ))}
+                </div>
+              </div>
+
+              {/* 4. Advice Format */}
+              <div className="space-y-3">
+                <label className="text-xs font-bold text-slate-400 uppercase tracking-wider">How do you prefer financial advice to be explained?</label>
+                <input 
+                  type="text" 
+                  value={data.adviceFormatPreference}
+                  onChange={(e) => updateData({ adviceFormatPreference: e.target.value })}
+                  placeholder="Type your preference..."
+                  className="w-full bg-[#171C28] border border-white/5 rounded-xl px-4 py-3 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all"
+                />
+                 <div className="flex flex-wrap gap-2">
+                   {['Simple & direct', 'Detailed & educational', 'Visual summaries', 'Minimal — just the key point'].map((opt) => (
+                     <button 
+                       key={opt}
+                       onClick={() => updateData({ adviceFormatPreference: opt })}
+                       className={`px-3 py-1.5 rounded-lg border text-xs transition-colors ${
+                         data.adviceFormatPreference === opt 
+                           ? 'bg-blue-600/20 border-blue-500 text-blue-300' 
+                           : 'bg-[#171C28] border-white/5 text-slate-400 hover:text-white hover:border-blue-500/50'
+                       }`}
+                     >
+                       {opt}
+                     </button>
+                   ))}
                 </div>
               </div>
 
