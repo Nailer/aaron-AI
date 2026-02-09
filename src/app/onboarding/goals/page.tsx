@@ -23,10 +23,26 @@ export default function GoalsPage() {
   const { data, updateData } = useOnboarding();
   const [isRecording, setIsRecording] = useState(false);
 
-  const handleContinue = () => {
-    // Add any validation here if needed
+  // const handleContinue = () => {
+  //   // Add any validation here if needed
+  //   router.push('/onboarding/additional-info');
+  // };
+  const handleContinue = async () => {
+    const response = await fetch("http://localhost:3000/onboarding/goals", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data), // ALL your form data
+    });
+
+    const result = await response.json();
+
+    console.log("AI Financial Plan:", result.analysis);
+
     router.push('/onboarding/additional-info');
   };
+
 
   return (
     <div className="min-h-screen flex flex-col">
