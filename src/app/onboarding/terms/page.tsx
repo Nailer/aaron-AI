@@ -30,7 +30,7 @@ export default function TermsPage() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center">
               <div className="w-4 h-4 bg-white rounded-sm rotate-45" />
             </div>
-            <span className="font-bold text-lg tracking-tight">RESOLV.AI</span>
+            <span className="font-bold text-lg tracking-tight">Aaron AI</span>
           </div>
         </div>
       </header>
@@ -91,7 +91,7 @@ export default function TermsPage() {
 
           <div className="p-8 md:p-12 bg-[#0F1218] border-t border-white/5">
             <div className="bg-[#171C28] rounded-2xl p-6 border border-white/5 h-48 overflow-y-auto mb-8 text-sm text-slate-400 space-y-4">
-               <p><strong className="text-white">1. Introduction.</strong> Welcome to RESOLV.AI. By using our services, you agree to these terms...</p>
+               <p><strong className="text-white">1. Introduction.</strong> Welcome to Aaron AI. By using our services, you agree to these terms...</p>
                <p><strong className="text-white">2. Data Privacy.</strong> We take your privacy seriously. All data inputted into our system is encrypted...</p>
                <p><strong className="text-white">3. Financial Advice Disclaimer.</strong> The AI generated insights are for informational purposes only and do not constitute professional financial advice. Always consult a certified advisor...</p>
                <p><strong className="text-white">4. User Responsibility.</strong> You are responsible for the accuracy of the information provided...</p>

@@ -1,9 +1,18 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import asyncio
-from agent_runner import run_financial_agent  # we will define this
+from agent_runner import run_financial_agent
 
 app = FastAPI()
+
+# CRITICAL: Allow your frontend to talk to your backend
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"], # Your Next.js URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class FinancialProfile(BaseModel):
     goalDescription: str
@@ -15,8 +24,8 @@ class FinancialProfile(BaseModel):
     aiInterventionPreference: str
     adviceFormatPreference: str
 
-
 @app.post("/analyze-finances")
 async def analyze_finances(profile: FinancialProfile):
-    result = await run_financial_agent(profile.dict())
+    # .dict() is deprecated in newer Pydantic; use .model_dump()
+    result = await run_financial_agent(profile.model_dump())
     return result

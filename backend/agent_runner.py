@@ -1,8 +1,33 @@
-from google.adk.runners import Runner
-from your_agent_setup import financial_agent   # your ADK agent
+import datetime
+import asyncio
+import asyncio
 import uuid
+import litellm
 
-runner = Runner()
+from google.adk.runners import Runner
+
+from dotenv import load_dotenv
+from litellm.exceptions import RateLimitError
+from zoneinfo import ZoneInfo
+from google.adk.agents import LlmAgent
+from google.adk.models.lite_llm import LiteLlm
+from opik.integrations.adk import OpikTracer, track_adk_agent_recursive
+from google.adk.runners import Runner
+from google.adk.sessions import InMemorySessionService
+from google.genai import types
+from google.adk.runners import Runner
+from agent_tracking import basic_agent
+from google.adk.sessions import InMemorySessionService
+
+# 1. Instantiate the session service
+session_service = InMemorySessionService()
+
+# 2. Pass it to the Runner during initialization
+runner = Runner(
+    agent=basic_agent,  # The agent you defined earlier
+    app_name="financial_coach_app",
+    session_service=session_service  # Added this required argument
+)
 
 async def run_financial_agent(user_data: dict):
     session_id = str(uuid.uuid4())

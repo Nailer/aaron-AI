@@ -28,7 +28,7 @@ export default function Sidebar() {
           <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center">
             <div className="w-4 h-4 bg-white rounded-sm rotate-45" />
           </div>
-          <span className="font-bold text-lg tracking-tight text-white">RESOLV.AI</span>
+          <span className="font-bold text-lg tracking-tight text-white">Aaron AI</span>
         </div>
 
         <div className="space-y-1">
