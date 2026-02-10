@@ -41,6 +41,26 @@ OPIK_API_KEY=your_opik_api_key_here
 OPIK_PROJECT_NAME=Aaron
 OPIK_WORKSPACE=your_workspace_name
 
+```bash 
+GEMINI_API_KEY="your_gemini_api_key_here"
+
+# Opik Configuration
+OPIK_API_KEY="your_opik_api_key_here"
+OPIK_URL_OVERRIDE="https://www.comet.com/opik/api"
+OPIK_PROJECT_NAME="Aaron"
+OPIK_WORKSPACE="your_opik_workspace_here"
+
+# LLM Provider API Keys (if needed)
+OPENAI_API_KEY="your_openai_api_key_here"
+OPENAI_API_KEY_2="your_openai_api_key_2_here"
+GROQ_API_KEY="your_groq_api_key_here"
+
+# Logging Configuration (see Debug Mode and Logging section below)
+OPIK_CONSOLE_LOGGING_LEVEL="WARNING"  # Python: Control console output (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+OPIK_FILE_LOGGING_LEVEL="DEBUG"       # Python: Enable file logging
+OPIK_LOG_LEVEL="DEBUG"                # TypeScript: Control log level
+```
+
 # --- SERVER CONFIGURATION ---
 PORT=8000
 FRONTEND_URL=http://localhost:3000
