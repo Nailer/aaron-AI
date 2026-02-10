@@ -25,7 +25,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-white/20 blur-sm rounded-lg"></div>
                 <div className="w-4 h-4 bg-white rounded-sm rotate-45"></div>
               </div>
-              <span className="text-xl font-bold tracking-tight">RESOLV.AI</span>
+              <span className="text-xl font-bold tracking-tight">Aaron AI</span>
             </div>
 
             {/* Desktop Menu */}
@@ -164,7 +164,7 @@ export default function Home() {
                 </h2>
                 <p className="text-lg text-muted-foreground">
                   Old-school finance apps tell you what you <span className="italic text-white">did</span> wrong. 
-                  RESOLV.AI tells you how to get it <span className="font-semibold text-white">right</span>, exactly when you're about to tap your card.
+                  Aaron AI tells you how to get it <span className="font-semibold text-white">right</span>, exactly when you're about to tap your card.
                 </p>
               </div>
 
@@ -209,7 +209,7 @@ export default function Home() {
                       <Bell className="text-white" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-blue-400 text-sm tracking-wide">RESOLV.AI ALERT</h4>
+                      <h4 className="font-bold text-blue-400 text-sm tracking-wide">Aaron AI ALERT</h4>
                       <div className="flex items-center gap-2">
                         <span className="text-white font-medium">Decision Point</span>
                         <span className="px-1.5 py-0.5 rounded text-[10px] bg-green-500/20 text-green-400 border border-green-500/20">Live</span>
@@ -260,7 +260,7 @@ export default function Home() {
             <div className="col-span-2 md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-6 h-6 bg-gradient-to-tr from-primary to-accent rounded-md"></div>
-                <span className="text-lg font-bold">RESOLV.AI</span>
+                <span className="text-lg font-bold">Aaron AI</span>
               </div>
               <p className="text-sm text-muted-foreground mb-6">
                 Proactive financial guidance for the modern era. Secure, intelligent, and designed for your success.
@@ -298,7 +298,7 @@ export default function Home() {
           </div>
           
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-            <p>&copy; 2026 RESOLV.AI. All rights reserved.</p>
+            <p>&copy; 2026 Aaron AI. All rights reserved.</p>
             <div className="flex gap-6">
               <Link href="#" className="hover:text-white">Twitter</Link>
               <Link href="#" className="hover:text-white">LinkedIn</Link>

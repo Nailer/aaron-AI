@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aaron AI (RESOLV.AI) 🚀
+### The Agentic Financial Bodyguard & Goal Guardian
 
-## Getting Started
+**Aaron AI** (internally branded as **RESOLV.AI**) is an autonomous financial coaching system built for the 2026 New Year Resolution Hackathon. Unlike passive budgeting apps, Aaron AI uses a multi-agent orchestration to proactively intervene in spending habits, evaluate financial feasibility, and guide users toward their long-term goals using high-fidelity AI observability.
 
-First, run the development server:
+---
 
+## 🌟 Key Features
+* **Proactive Goal Tracking:** Moves beyond spreadsheets to provide active "nudges" based on user-defined financial missions.
+* **Multi-Agent Orchestration:** Powered by the **Google Agent Development Kit (ADK)** to separate reasoning, math, and coaching logic.
+* **Production-Grade Observability:** Deep integration with **Opik** for real-time trace logging, response evaluation, and LLM-as-a-judge scoring.
+* **Behavioral Intervention:** Custom logic that factors in risk appetite and income predictability to provide personalized advice.
+
+---
+
+## 🛠️ Tech Stack
+* **Frontend:** Next.js 14+, Tailwind CSS, Lucide React.
+* **Backend:** FastAPI (Python 3.13), Uvicorn.
+* **AI Engine:** Google ADK, LiteLLM.
+* **LLMs:** Llama 3.3 70B & 3.1 8B (via Groq).
+* **Observability:** [Opik](https://www.comet.com/docs/opik/) (by Comet).
+
+---
+
+## 🚀 Getting Started
+
+### 1. Prerequisites
+Ensure you have the following installed:
+* [Node.js](https://nodejs.org/) (v18+)
+* [Python](https://www.python.org/) (v3.10+)
+* [Git](https://git-scm.com/)
+
+
+# --- AI & LLM CONFIGURATION ---
+# Get your key at https://console.groq.com/
+GROQ_API_KEY=your_groq_api_key_here
+
+# --- OPIK OBSERVABILITY ---
+# Get your key at https://www.comet.com/docs/opik/
+OPIK_API_KEY=your_opik_api_key_here
+OPIK_PROJECT_NAME=Aaron
+OPIK_WORKSPACE=your_workspace_name
+
+# --- SERVER CONFIGURATION ---
+PORT=8000
+FRONTEND_URL=http://localhost:3000
+
+### Environment Configuration 🔑
+Before running the backend, you must set up your environment variables. 
+
+1. In the root directory, copy the example file:
+   ```bash
+   cp .env.example .env
+
+### 2. Installation & Frontend Setup
+Clone the repository and install dependencies for the user interface.
+
+Note: If you encounter any bugs during the frontend setup, please create a new [issue](https://github.com/Nailer/aaron-AI/issues) on GitHub.
 ```bash
+# Clone the project
+git clone [https://github.com/Nailer/aaron-AI](https://github.com/Nailer/aaron-AI)
+
+# Navigate to the project directory
+cd aaron-AI
+
+# Install dependencies
+# We use NPM for package management. See the official [NPM Documentation](https://docs.npmjs.com/) for more info.
+npm install
+
+# Start the frontend development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. AI Backend & Opik Observability Setup
+To enable the AI "brain" and log traces for response evaluation, follow these steps to set up the Python environment.
+```bash
+# Initialize Virtual Environment
+# Create and activate a virtual environment to keep dependencies isolated.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# For macOS/Linux:
+python3 -m venv venv
+source venv/bin/activate
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# For Windows
+python -m venv venv
+.\venv\Scripts\activate
+```
+### Install Requirements & Start API
+```bash
+# Install backend dependencies
+pip install -r requirements.txt
 
-## Learn More
+# Start the FastAPI server
+uvicorn backend.api:app --port 8000 --reload
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Enable Agent Tracking
+In a new terminal tab (with the venv activated), run the tracking script to initiate the [Opik](https://www.comet.com/docs/opik/) logging session:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+python backend/agent_tracking.py
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# All agent trajectories, tool calls, and LLM outputs will now be logged to the Opik dashboard for evaluation.
+```
 
-## Deploy on Vercel
+### 📊 AI Observability with Opik
+We utilize Opik to ensure our financial advice is accurate and safe.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Tracing: Every interaction is traced through the Google ADK runner.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+* Evaluation: We use LLM-as-a-judge metrics to score "Financial Responsibility".
+
+* Debugging: Traces allow us to deduce exactly why an agent recommended a specific savings plan.
+
+├── backend/
+│   ├── api.py              # FastAPI Endpoints
+│   ├── agent_runner.py     # ADK Runner logic
+│   ├── agent_tracking.py   # Opik integration script
+│   └── __init__.py            # Financial calculation tools
+├── frontend/               # Next.js Application
+├── requirements.txt        # Python dependencies
+└── package.json            # Node.js dependencies
+
+### 🛡️ Security & Privacy
+Aaron AI is built with financial privacy in mind. We do not store raw bank credentials. All data processed is used strictly for the generation of your financial plan and is encrypted during transit.
+
+## 📄 License
+Distributed under the MIT License. See LICENSE for more information.
+
+### Developed with ❤️ for the 2026 Comet Hackathon.

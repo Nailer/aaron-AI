@@ -23,10 +23,15 @@ export default function GoalsPage() {
   const { data, updateData } = useOnboarding();
   const [isRecording, setIsRecording] = useState(false);
 
-  const handleContinue = () => {
-    // Add any validation here if needed
+  // const handleContinue = () => {
+  //   // Add any validation here if needed
+  //   router.push('/onboarding/additional-info');
+  // };
+  const handleContinue = async () => {
+    
     router.push('/onboarding/additional-info');
   };
+
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -37,7 +42,7 @@ export default function GoalsPage() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center">
               <div className="w-4 h-4 bg-white rounded-sm rotate-45" />
             </div>
-            <span className="font-bold text-lg tracking-tight">RESOLV.AI</span>
+            <span className="font-bold text-lg tracking-tight">Aaron AI</span>
           </div>
           
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
@@ -109,7 +114,7 @@ export default function GoalsPage() {
 
             <div className="mt-8 flex items-center gap-2">
               <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-              <span className="text-xs text-slate-500 font-medium">RESOLV.AI is processing your inputs</span>
+              <span className="text-xs text-slate-500 font-medium">Aaron AI is processing your inputs</span>
             </div>
           </div>
 
@@ -436,7 +441,7 @@ export default function GoalsPage() {
         </div>
 
         <footer className="mt-20 text-center text-xs text-slate-600 space-x-6">
-           <span>© 2026 RESOLV.AI Financial Planning. All rights reserved.</span>
+           <span>© 2026 Aaron AI Financial Planning. All rights reserved.</span>
            <a href="#" className="hover:text-slate-400 transition-colors">Privacy Policy</a>
            <a href="#" className="hover:text-slate-400 transition-colors">Terms of Service</a>
            <a href="#" className="hover:text-slate-400 transition-colors">Support</a>
