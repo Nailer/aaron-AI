@@ -3,6 +3,9 @@
 
 **Aaron AI** (internally branded as **RESOLV.AI**) is an autonomous financial coaching system built for the 2026 New Year Resolution Hackathon. Unlike passive budgeting apps, Aaron AI uses a multi-agent orchestration to proactively intervene in spending habits, evaluate financial feasibility, and guide users toward their long-term goals using high-fidelity AI observability.
 
+### Here is one of our traces id
+```019c25c3-d5f4-7d4a-9953-089c87868dcc```
+
 ---
 
 ## 🌟 Key Features
