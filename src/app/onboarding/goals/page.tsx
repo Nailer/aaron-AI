@@ -28,24 +28,8 @@ export default function GoalsPage() {
   //   router.push('/onboarding/additional-info');
   // };
   const handleContinue = async () => {
-    try {
-      const response = await fetch("http://localhost:3000/onboarding/goals", { // Point to FastAPI
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data), 
-      });
-
-      const result = await response.json();
-      
-      // Store this in your Context or State so the next page can show it!
-      console.log("AI Financial Plan:", result.analysis);
-      
-      router.push('/onboarding/additional-info');
-    } catch (error) {
-      console.error("Failed to reach Aaron AI:", error);
-    }
+    
+    router.push('/onboarding/additional-info');
   };
 
 
