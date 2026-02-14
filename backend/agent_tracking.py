@@ -92,7 +92,7 @@ async def safe_run(runner, user_id, session_id, user_message):
                 user_id=user_id,
                 session_id=session_id,
                 new_message=user_message,
-                plugins=[opik_tracer]  
+                # plugins=[opik_tracer]  
             ):
                 if event.is_final_response():
                     return event.content.parts[0].text
