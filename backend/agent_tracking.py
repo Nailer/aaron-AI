@@ -59,6 +59,14 @@ basic_agent = LlmAgent(
     tools=[calculate_savings, budgeting_advice],
 )
 
+# Configure Opik tracer
+opik_tracer = OpikTracer(
+    project_name="Aaron"
+)
+
+# This is the "Magic" line that instruments the agent
+track_adk_agent_recursive(basic_agent, opik_tracer)
+
 # from chatGPT
 session_service = InMemorySessionService()
 runner = Runner(
@@ -84,6 +92,7 @@ async def safe_run(runner, user_id, session_id, user_message):
                 user_id=user_id,
                 session_id=session_id,
                 new_message=user_message,
+                plugins=[opik_tracer]  
             ):
                 if event.is_final_response():
                     return event.content.parts[0].text
