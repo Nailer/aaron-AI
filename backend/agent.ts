@@ -1,5 +1,5 @@
-import {FunctionTool, LlmAgent} from '@google/adk';
-import {z} from 'zod';
+import { FunctionTool, LlmAgent } from '@google/adk';
+import { z } from 'zod';
 
 /* Mock tool implementation */
 // const getCurrentTime = new FunctionTool({
@@ -17,7 +17,11 @@ import {z} from 'zod';
 // demo function tool
 const retrieveOrderById = new FunctionTool({
   name: "retrieveOrderById",
-  execute: async({orderId}) => {
+  description: "Retrieves the status of an order by its ID.",
+  parameters: z.object({
+    orderId: z.string().describe("The ID of the order to retrieve."),
+  }),
+  execute: async ({ orderId }) => {
     return {
       orderId: orderId,
       status: "Delivered",
@@ -30,5 +34,5 @@ export const rootAgent = new LlmAgent({
   model: 'gemini-2.5-flash',
   description: 'Tells the current time in a specified city.',
   instruction: `You are a helpful assistant that tells the current time in a city. you give the time of the city the user asks`,
-  
+
 });

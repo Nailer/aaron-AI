@@ -12,6 +12,7 @@ interface GoalData {
   aiInterventionPreference: string;
   adviceFormatPreference: string;
   additionalInfo: string;
+  aiResponse: string | null;
 }
 
 interface OnboardingContextType {
@@ -29,6 +30,7 @@ const defaultData: GoalData = {
   aiInterventionPreference: "",
   adviceFormatPreference: "",
   additionalInfo: "",
+  aiResponse: null,
 };
 
 const OnboardingContext = createContext<OnboardingContextType | undefined>(undefined);
