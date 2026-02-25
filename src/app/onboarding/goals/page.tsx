@@ -23,13 +23,37 @@ export default function GoalsPage() {
   const { data, updateData } = useOnboarding();
   const [isRecording, setIsRecording] = useState(false);
 
-  // const handleContinue = () => {
-  //   // Add any validation here if needed
-  //   router.push('/onboarding/additional-info');
-  // };
   const handleContinue = async () => {
-    
-    router.push('/onboarding/additional-info');
+    try {
+      const response = await fetch("http://127.0.0.1:8000/analyze", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          user_id: "user123",
+          goal_description: data.goalDescription,
+          annual_income: data.annualIncome,
+          monthly_expenses: 350000, // replace with real state if you have it
+          timeframe: data.timeframe,
+          risk_appetite: data.riskAppetite,
+          income_predictability: data.incomePredictability,
+          savings_target: data.savingsTarget,
+          ai_intervention: data.aiInterventionPreference,
+          advice_style: data.adviceFormatPreference,
+        }),
+      });
+
+      const result = await response.json();
+
+      // Save response to context or localStorage
+      updateData({ aiResponse: result.response });
+
+      router.push('/onboarding/additional-info');
+
+    } catch (error) {
+      console.error("Error connecting to AI:", error);
+    }
   };
 
 
